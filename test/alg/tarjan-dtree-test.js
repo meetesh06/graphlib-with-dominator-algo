@@ -43,10 +43,10 @@ describe("alg.tarjanDtree", function () {
       'J': ['G'],
       'K': ['R'],
       'L': ['D'],
-    }
+    };
     for (let n of nodes) {
-      let obtainedRes = domTree.predecessors(n)
-      let expectedRes = expectedResult[n]
+      let obtainedRes = domTree.predecessors(n);
+      let expectedRes = expectedResult[n];
       expect(obtainedRes).to.eql(expectedRes);
     }
   });
@@ -74,7 +74,7 @@ describe("alg.tarjanDtree", function () {
     ];
     edges.forEach(([from, to]) => graph.setEdge(from, to));
 
-    let domTree = dominatorTarjan(graph, "r")
+    let domTree = dominatorTarjan(graph, "r");
 
     let expectedResult = {
       'r': [],
@@ -88,16 +88,11 @@ describe("alg.tarjanDtree", function () {
       'u': ['s'],
       'm2': ['u'],
       'v': ['m2']
-    }
+    };
     for (let n of nodes) {
-      let obtainedRes = domTree.predecessors(n)
-      let expectedRes = expectedResult[n]
+      let obtainedRes = domTree.predecessors(n);
+      let expectedRes = expectedResult[n];
       expect(obtainedRes).to.eql(expectedRes);
     }
   });
 });
-
-// A helper that sorts components and their contents
-function sort(cmpts) {
-  return cmpts.map(cmpt => cmpt.sort()).sort((a, b) => a[0].localeCompare(b[0]));
-}
