@@ -617,5 +617,20 @@ declare module '@dagrejs/graphlib' {
      * @returns the nodes in the order they were visited as a list of their names.
      */
     function postorder(graph: Graph, vs: string[]): string[];
+
+    /**
+     * Computes and returns the Dominator tree for a given (graph, root node).
+     * If debug is set to true, it prints the generated numbered DFSTree and computed semidominators.
+     * This is a direct implementation of the "A Fast Algorithm for Finding Dominators in a Flowgraph" algorithm.
+     * Some parts of the implementation are not as efficient (but very easy to understand) 
+     * they are expected to be worked upon over time.
+     *
+     * @argument graph - target graph.
+     * @argument rootNode - root node.
+     * @argument debug - if this flag is set, it prints the intermediate computed graph in GraphViz format. 
+     * @returns a dominator tree.
+     */
+    function dominatorTarjan(graph: Graph, rootNode: string, debug: boolean): Graph;
+
   }
 }
