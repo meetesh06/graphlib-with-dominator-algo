@@ -421,6 +421,14 @@ declare module '@dagrejs/graphlib' {
      * @returns the graph source nodes.
      */
     sinks(): string[];
+
+    /**
+     * Save the generated in graphviz format. 
+     * 
+     * @argument graphName - The name to be given to the generated graphviz graph
+     * @returns a string
+     */
+    saveDot(graphName? : string) : string;
   }
 
   export namespace json {
